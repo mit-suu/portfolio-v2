@@ -1,3 +1,5 @@
+"use client";
+
 import { skills } from "@/constants/skills";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -7,9 +9,9 @@ export function SkillsSection() {
   return (
     <SectionWrapper id="skills">
       <SectionHeading>Skills</SectionHeading>
-      <div className="grid gap-5 md:grid-cols-2">
-        {skills.map((skill) => (
-          <SkillCard key={skill.id} skill={skill} />
+      <div className="skills-grid">
+        {skills.map((skill, index) => (
+          <SkillCard key={skill.id} skill={skill} index={index} />
         ))}
       </div>
     </SectionWrapper>
