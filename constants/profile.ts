@@ -25,7 +25,7 @@ export const monologue =
 
 export const characterNotes = [
   { label: "Based in", value: "Da Nang, VN" },
-  { label: "Studying", value: "Software Eng. · FPT Univ." },
+  { label: "Studying", value: "Software Engineering · FPT University" },
   { label: "Graduating", value: "Dec 2026" },
   { label: "Currently", value: "AI Engineer Intern @ Tekmium" },
 ];

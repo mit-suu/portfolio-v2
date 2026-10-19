@@ -2244,13 +2244,13 @@ html.has-cursor * {
   list-style: none;
 }
 
-.screening__notes li {
+.screening__notes ol li {
   display: grid;
   grid-template-columns: 2.5rem minmax(0, 1fr);
   line-height: 1.6;
 }
 
-.screening__notes li span {
+.screening__notes ol li span {
   font-family: var(--font-mono-face), monospace;
   font-size: 0.7rem;
   color: var(--tone);
