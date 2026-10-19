@@ -475,25 +475,23 @@ html.has-cursor * {
   padding-bottom: calc((var(--bar-closed) - 22px) / 2);
 }
 
+/* Full words on wide screens, abbreviations where space is tight. */
+.hud__short {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .hud__long {
+    display: none;
+  }
+
+  .hud__short {
+    display: inline;
+  }
+}
+
 .hud__dim {
   color: var(--paper-faint);
-}
-
-.hud__rec {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  color: var(--paper);
-  justify-self: start;
-}
-
-.hud__rec-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--rec);
-  box-shadow: 0 0 10px var(--rec);
-  animation: rec 1.4s steps(1) infinite;
 }
 
 @keyframes rec {

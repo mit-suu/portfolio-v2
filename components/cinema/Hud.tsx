@@ -132,12 +132,11 @@ export function Hud() {
   return (
     <div ref={rootRef} className="hud" data-intro={introDone ? "done" : "pending"}>
       <div className="hud__bar hud__bar--top">
-        <div className="hud__item hud__rec">
-          <span className="hud__rec-dot" aria-hidden="true" />
-          REC
-        </div>
+        <span aria-hidden="true" />
         <div className="hud__item hud__scene" aria-live="polite">
-          <span className="hud__scene-number">SC {active.number}</span>
+          <span className="hud__scene-number">
+            <span className="hud__long">Scene</span><span className="hud__short">SC</span> {active.number}
+          </span>
           <span className="hud__scene-sep" aria-hidden="true">—</span>
           <AnimatePresence mode="wait" initial={false}>
             <motion.span
@@ -153,7 +152,10 @@ export function Hud() {
           </AnimatePresence>
         </div>
         <div className="hud__item hud__timecode">
-          <span className="hud__dim">TC</span> <span ref={timecodeRef}>00:00:00:00</span>
+          <span className="hud__dim">
+            <span className="hud__long">Timecode</span><span className="hud__short">TC</span>
+          </span>{" "}
+          <span ref={timecodeRef}>00:00:00:00</span>
           <span className="hud__dim hud__fps"> · {FPS} FPS</span>
         </div>
       </div>
@@ -189,7 +191,7 @@ export function Hud() {
             ‹
           </button>
           <span>
-            SC {active.number}
+            <span className="hud__long">Scene</span><span className="hud__short">SC</span> {active.number}
             <span className="hud__dim"> / {scenes[scenes.length - 1].number}</span>
           </span>
           <button

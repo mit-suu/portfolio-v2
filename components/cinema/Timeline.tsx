@@ -150,7 +150,7 @@ export function Timeline() {
           style={{ left: Math.min(Math.max(hover.x, 120), hover.width - 120) }}
           aria-hidden="true"
         >
-          <span className="timeline__tooltip-scene">SC {hovered.number}</span>
+          <span className="timeline__tooltip-scene">Scene {hovered.number}</span>
           <span className="timeline__tooltip-label">{hovered.label}</span>
           <span className="timeline__tooltip-time">{toShortTimecode(hover.fraction * maxScroll)}</span>
         </div>
