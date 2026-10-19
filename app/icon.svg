@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5ee6d8"/>
+      <stop offset="1" stop-color="#2f7bff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#070a0c"/>
+  <!-- viewfinder corners -->
+  <g fill="none" stroke="#5ee6d8" stroke-width="3" stroke-linecap="round">
+    <path d="M11 20V11h9"/>
+    <path d="M44 11h9v9"/>
+    <path d="M11 44v9h9"/>
+    <path d="M53 44v9h-9"/>
+  </g>
+  <!-- H monogram -->
+  <path fill="url(#g)" d="M21 19h6.5v10h9V19H43v26h-6.5V35h-9v10H21z"/>
+  <!-- REC light -->
+  <circle cx="50" cy="14" r="3.2" fill="#ff3b30"/>
+</svg>
