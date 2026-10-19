@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { GRADE_BOOT_SCRIPT } from "@/lib/grade";
 import "./globals.css";
 
 const display = Space_Grotesk({
@@ -41,7 +42,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${serif.variable} ${sans.variable} ${mono.variable}`}>
+    <html
+      lang="en"
+      className={`${display.variable} ${serif.variable} ${sans.variable} ${mono.variable}`}
+      // The boot script may set data-theme before React hydrates.
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: GRADE_BOOT_SCRIPT }} />
+      </head>
       <body>
         <noscript>
           <style>{`.leader{display:none}`}</style>

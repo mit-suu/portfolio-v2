@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { GRADE_EVENT } from "@/lib/grade";
 
 type Mote = { x: number; y: number; r: number; vx: number; vy: number; a: number; twinkle: number };
 
@@ -19,6 +20,12 @@ export function ProjectorDust({ count = 90 }: { count?: number }) {
     let frame = 0;
     let visible = true;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    // Dust picks up the current colour grade's light.
+    let color = "#cdf6ff";
+    const readColor = () => {
+      color = getComputedStyle(document.documentElement).getPropertyValue("--glow").trim() || color;
+    };
+    readColor();
 
     const resize = () => {
       width = canvas.clientWidth;
@@ -55,7 +62,7 @@ export function ProjectorDust({ count = 90 }: { count?: number }) {
         ctx.globalAlpha = m.a * (0.55 + 0.45 * Math.sin(m.twinkle)) * (0.35 + beam);
         ctx.beginPath();
         ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
-        ctx.fillStyle = "#cdf6ff";
+        ctx.fillStyle = color;
         ctx.fill();
       }
     };
@@ -64,8 +71,10 @@ export function ProjectorDust({ count = 90 }: { count?: number }) {
     const io = new IntersectionObserver(([entry]) => (visible = entry.isIntersecting));
     io.observe(canvas);
     window.addEventListener("resize", resize);
+    window.addEventListener(GRADE_EVENT, readColor);
 
     return () => {
+      window.removeEventListener(GRADE_EVENT, readColor);
       cancelAnimationFrame(frame);
       io.disconnect();
       window.removeEventListener("resize", resize);

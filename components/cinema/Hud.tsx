@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { scenes } from "@/constants/navigation";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { useCinema } from "./CinemaProvider";
+import { GradePicker } from "./GradePicker";
 import { Timeline } from "./Timeline";
 
 const FPS = 24;
@@ -132,7 +133,7 @@ export function Hud() {
   return (
     <div ref={rootRef} className="hud" data-intro={introDone ? "done" : "pending"}>
       <div className="hud__bar hud__bar--top">
-        <span aria-hidden="true" />
+        <GradePicker />
         <div className="hud__item hud__scene" aria-live="polite">
           <span className="hud__scene-number">
             <span className="hud__long">Scene</span><span className="hud__short">SC</span> {active.number}
