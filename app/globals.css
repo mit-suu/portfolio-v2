@@ -21,6 +21,7 @@
 
   --gutter: clamp(16px, 4vw, 56px);
   --bar-open: 11vh;
+  --bar-open-bottom: 6vh;
   --bar-closed: 40px;
   --container: max(var(--gutter), calc((100vw - 1380px) / 2));
 
@@ -40,6 +41,7 @@
 @media (max-width: 767px) {
   :root {
     --bar-open: 8vh;
+    --bar-open-bottom: 5vh;
     --bar-closed: 36px;
   }
 }
@@ -467,6 +469,7 @@ html.has-cursor * {
 
 .hud__bar--bottom {
   bottom: 0;
+  height: var(--bar-open-bottom);
   /* Sit low in the thick opening letterbox; still centred once it slims to --bar-closed. */
   align-items: end;
   padding-bottom: calc((var(--bar-closed) - 22px) / 2);
@@ -1152,7 +1155,7 @@ html.has-cursor * {
 .opening__cue-wrap {
   position: absolute;
   right: var(--gutter);
-  bottom: calc(var(--bar-open) + 1.75rem);
+  bottom: calc(var(--bar-open-bottom) + 1.75rem);
   z-index: 2;
 }
 

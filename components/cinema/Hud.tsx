@@ -69,14 +69,17 @@ export function Hud() {
       });
 
       // Thick letterbox for the opening titles, slimming down once the film is rolling.
+      // The bottom bar opens thinner so the controls sit low in the frame.
+      const opening = { trigger: document.getElementById("opening"), start: "top top", end: "bottom top", scrub: true };
       gsap.fromTo(
-        ".hud__bar",
+        ".hud__bar--top",
         { height: "var(--bar-open)" },
-        {
-          height: "var(--bar-closed)",
-          ease: "none",
-          scrollTrigger: { trigger: document.getElementById("opening"), start: "top top", end: "bottom top", scrub: true },
-        },
+        { height: "var(--bar-closed)", ease: "none", scrollTrigger: opening },
+      );
+      gsap.fromTo(
+        ".hud__bar--bottom",
+        { height: "var(--bar-open-bottom)" },
+        { height: "var(--bar-closed)", ease: "none", scrollTrigger: opening },
       );
     },
     { scope: rootRef },
