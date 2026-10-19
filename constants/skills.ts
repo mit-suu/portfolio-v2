@@ -1,41 +1,40 @@
-import {
-  Braces,
-  CodeXml,
-  Database,
-  Server,
-  Wrench,
-} from "lucide-react";
 import type { SkillCategory } from "@/types/portfolio";
 
 export const skills: SkillCategory[] = [
   {
     id: "frontend",
-    title: "Frontend",
-    icon: CodeXml,
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML", "CSS"],
+    title: "Front-end",
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "next-intl", "HTML", "CSS"],
   },
   {
     id: "backend",
-    title: "Backend",
-    icon: Server,
-    items: ["Node.js", "Express.js", "RESTful APIs", "API Design", "Authentication"],
+    title: "Back-end",
+    items: ["Node.js", "Express 5", "REST API design", "Zod", "JWT & OAuth", "BullMQ", "SSE", "Webhooks", "Spring Boot"],
   },
   {
-    id: "database",
-    title: "Database",
-    icon: Database,
-    items: ["MongoDB", "PostgreSQL", "Mongoose"],
+    id: "data",
+    title: "Databases",
+    items: ["MongoDB", "Mongoose", "Atlas Vector Search", "Redis", "MySQL", "SQL Server"],
   },
   {
-    id: "devops-tools",
-    title: "DevOps & Tools",
-    icon: Wrench,
-    items: ["Git", "GitHub", "GitHub Actions", "Docker", "Azure", "Vercel", "Cloudinary"],
+    id: "quality",
+    title: "Testing & Quality",
+    items: ["Vitest", "Jest", "Testing Library", "MSW", "Supertest", "Playwright"],
   },
   {
-    id: "programming-languages",
-    title: "Programming Languages",
-    icon: Braces,
-    items: ["JavaScript", "TypeScript", "Java"],
+    id: "devops",
+    title: "CI/CD & Cloud",
+    items: ["Docker", "GitHub Actions", "Azure App Service", "Azure Container Registry", "Vercel", "Git", "SVN"],
   },
+  {
+    id: "ai",
+    title: "AI & Tooling",
+    items: ["LLM features", "AI agents", "RAG", "Vercel AI SDK", "Gemini", "Claude Code", "Figma"],
+  },
+];
+
+/** The "cast" that scrolls across the screen in giant type. */
+export const castMarquee = [
+  ["React", "Next.js", "TypeScript", "Node.js", "Express", "MongoDB"],
+  ["Redis", "BullMQ", "Docker", "Azure", "RAG", "Playwright"],
 ];

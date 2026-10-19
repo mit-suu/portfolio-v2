@@ -1,22 +1,38 @@
-import type { Metadata } from "next";
-import { Geist_Mono, Poppins } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Fraunces, Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const display = Space_Grotesk({
+  variable: "--font-display-face",
+  subsets: ["latin", "vietnamese"],
+  weight: ["500", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const serif = Fraunces({
+  variable: "--font-serif-face",
+  subsets: ["latin", "vietnamese"],
+  style: ["normal", "italic"],
+  axes: ["opsz", "SOFT"],
+});
+
+const sans = Inter({
+  variable: "--font-sans-face",
+  subsets: ["latin", "vietnamese"],
+});
+
+const mono = JetBrains_Mono({
+  variable: "--font-mono-face",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Tran Tuan Hiep | Full-Stack Developer",
+  title: "Tran Tuan Hiep — Full-Stack & AI Engineer",
   description:
-    "Personal portfolio of Tran Tuan Hiep, a Full-Stack Developer building scalable web applications with React, Next.js, Node.js, Express.js, and MongoDB.",
+    "The portfolio of Tran Tuan Hiep, a full-stack and AI engineer in Da Nang building with React, Next.js, Node.js and TypeScript — told as a film.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#070a0c",
 };
 
 export default function RootLayout({
@@ -25,8 +41,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${geistMono.variable} scroll-smooth`}>
-      <body>{children}</body>
+    <html lang="en" className={`${display.variable} ${serif.variable} ${sans.variable} ${mono.variable}`}>
+      <body>
+        <noscript>
+          <style>{`.leader{display:none}`}</style>
+        </noscript>
+        {children}
+      </body>
     </html>
   );
 }

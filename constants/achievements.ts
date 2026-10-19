@@ -1,29 +1,25 @@
-import { GraduationCap, Languages } from "lucide-react";
-import type { Achievement } from "@/types/portfolio";
+import type { Award, Stat } from "@/types/portfolio";
 
-export const achievements: Achievement[] = [
+export const stats: Stat[] = [
+  { value: 1020, label: "automated tests", caption: "809 backend + 211 frontend on FlintFlow" },
+  { value: 85.5, decimals: 1, suffix: "%", label: "answer correctness", caption: "RAG knowledge chat — vs 16.4% without RAG" },
+  { value: 96.9, decimals: 1, suffix: "%", label: "Recall@3", caption: "Hybrid retrieval, best configuration" },
+  { value: 3, label: "products led", caption: "Team Leader from requirements to production" },
+];
+
+export const awards: Award[] = [
   {
-    id: "entrance-ranking",
-    title: "Hackathon C++ (2021)",
-    description:
-      "Scored 55/100 in a competitive C++ programming hackathon, showcasing analytical thinking, algorithmic problem-solving, and programming fundamentals.",
-    year: "2021",
-    icon: GraduationCap,
+    id: "uxui-top10",
+    title: "Top 10 of 120 teams",
+    festival: "Web Design UX/UI Competition · Final Round",
+    year: "2026",
+    description: "With KIX Sneaker, an e-commerce platform built by a team of four.",
   },
   {
-    id: "toeic-550",
-    title: "TOEIC 550",
-    description:
-      "TOEIC 550, demonstrating English ability for technical documentation, communication, and learning international software engineering resources.",
-    icon: Languages,
-     year: "2023",
-  },
-   {
-    id: "toeic-5501 ",
-    title: "TOEIC 550",
-    description:
-      "TOEIC 550, demonstrating English ability for technical documentation, communication, and learning international software engineering resources.",
-    icon: Languages,
-     year: "2023",
+    id: "apilens-research",
+    title: "90% agreement with humans",
+    festival: "University Research · APILens",
+    year: "2026",
+    description: "Smell engine evaluated on 157 hand-labelled endpoints from 14 open-source repos, 0.82 macro precision.",
   },
 ];

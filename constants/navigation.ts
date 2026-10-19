@@ -1,18 +1,12 @@
-import {
-  Award,
-  Code2,
-  FolderKanban,
-  Mail,
-  UserRound,
-  Workflow,
-} from "lucide-react";
-import type { NavigationItem } from "@/types/portfolio";
+import type { Scene } from "@/types/portfolio";
 
-export const navigation: NavigationItem[] = [
-  { id: "about", label: "About", href: "#about", icon: UserRound },
-  { id: "skills", label: "Skills", href: "#skills", icon: Code2 },
-  { id: "experience", label: "Experience", href: "#experience", icon: Workflow },
-  { id: "projects", label: "Projects", href: "#projects", icon: FolderKanban },
-  { id: "achievements", label: "Achievements", href: "#achievements", icon: Award },
-  { id: "contact", label: "Contact", href: "#contact", icon: Mail },
+export const scenes: Scene[] = [
+  { id: "opening", number: "00", label: "Opening Titles" },
+  { id: "protagonist", number: "01", label: "The Protagonist" },
+  { id: "acts", number: "02", label: "The Journey" },
+  { id: "feature", number: "03", label: "Feature Presentation" },
+  { id: "box-office", number: "04", label: "Box Office" },
+  { id: "cast", number: "05", label: "The Cast" },
+  { id: "laurels", number: "06", label: "Laurels" },
+  { id: "credits", number: "07", label: "End Credits" },
 ];

@@ -1,16 +1,12 @@
-import type { LucideIcon } from "lucide-react";
-
-export type NavigationItem = {
+export type Scene = {
   id: string;
+  number: string;
   label: string;
-  href: `#${string}`;
-  icon: LucideIcon;
 };
 
 export type SkillCategory = {
   id: string;
   title: string;
-  icon: LucideIcon;
   items: string[];
 };
 
@@ -18,42 +14,61 @@ export type Experience = {
   id: string;
   company: string;
   role: string;
-  type: string;
   period: string;
   location: string;
-  workMode: string;
+  /** Screenplay-style slugline, e.g. "INT. TEKMIUM — AI LAB — DAY" */
+  slugline: string;
+  summary?: string;
   description: string[];
   technologies: string[];
+};
+
+export type ProjectMetric = {
+  value: number;
+  decimals?: number;
+  prefix?: string;
+  suffix?: string;
+  label: string;
 };
 
 export type Project = {
   id: string;
   name: string;
-  detailTitle: string;
-  year: string;
-  subtitle: string;
+  tagline: string;
+  genre: string;
+  period: string;
   role: string;
-  description: string;
-  features: string[];
+  logline: string;
+  highlights: string[];
   techStack: string[];
-  imageSrc: string;
-  images: string[];
+  metrics: ProjectMetric[];
+  imageSrc?: string;
+  images?: string[];
+  /** Two-tone palette used for the generated poster when there is no image */
+  palette: [string, string];
   liveDemoUrl?: string;
   githubUrl?: string;
-  featured: boolean;
 };
 
-export type Achievement = {
+export type Stat = {
+  value: number;
+  decimals?: number;
+  prefix?: string;
+  suffix?: string;
+  label: string;
+  caption: string;
+};
+
+export type Award = {
   id: string;
   title: string;
+  festival: string;
+  year: string;
   description: string;
-  year?: string;
-  icon: LucideIcon;
 };
 
 export type SocialLink = {
   id: string;
   label: string;
   url: string;
-  icon: LucideIcon;
 };

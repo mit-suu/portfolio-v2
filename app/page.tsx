@@ -1,25 +1,35 @@
-import { MainContent } from "@/components/layout/MainContent";
-import { PortfolioShell } from "@/components/layout/PortfolioShell";
-import { SiteFooter } from "@/components/layout/SiteFooter";
-import { AboutSection } from "@/components/sections/AboutSection";
-import { AchievementsSection } from "@/components/sections/AchievementsSection";
-import { ContactSection } from "@/components/sections/ContactSection";
-import { ExperienceSection } from "@/components/sections/ExperienceSection";
-import { ProjectsSection } from "@/components/sections/ProjectsSection";
-import { SkillsSection } from "@/components/sections/SkillsSection";
+import { CinemaProvider } from "@/components/cinema/CinemaProvider";
+import { Cursor } from "@/components/cinema/Cursor";
+import { FilmGrain } from "@/components/cinema/FilmGrain";
+import { FilmLeader } from "@/components/cinema/FilmLeader";
+import { Hud } from "@/components/cinema/Hud";
+import { Acts } from "@/components/scenes/Acts";
+import { BoxOffice } from "@/components/scenes/BoxOffice";
+import { Cast } from "@/components/scenes/Cast";
+import { EndCredits } from "@/components/scenes/EndCredits";
+import { FeaturePresentation } from "@/components/scenes/FeaturePresentation";
+import { Laurels } from "@/components/scenes/Laurels";
+import { OpeningTitles } from "@/components/scenes/OpeningTitles";
+import { Protagonist } from "@/components/scenes/Protagonist";
 
 export default function Home() {
   return (
-    <PortfolioShell>
-      <MainContent>
-        <AboutSection />
-        <SkillsSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <AchievementsSection />
-        <ContactSection />
-        <SiteFooter />
-      </MainContent>
-    </PortfolioShell>
+    <CinemaProvider>
+      <FilmLeader />
+      <main>
+        <OpeningTitles />
+        <Protagonist />
+        <Acts />
+        <FeaturePresentation />
+        <BoxOffice />
+        <Cast />
+        <Laurels />
+        <EndCredits />
+      </main>
+      {/* After <main> so its scroll triggers are created after the scenes' pins. */}
+      <Hud />
+      <FilmGrain />
+      <Cursor />
+    </CinemaProvider>
   );
 }

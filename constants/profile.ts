@@ -1,21 +1,31 @@
 export const profile = {
   fullName: "Tran Tuan Hiep",
-  role: "Full-Stack Developer",
+  firstName: "Tran Tuan",
+  lastName: "Hiep",
+  role: "Full-Stack & AI Engineer",
   headline:
-    "Building scalable web applications with modern technologies. Passionate about creating reliable products, designing clean APIs, and delivering great user experiences.",
+    "Full-stack developer working in React, Next.js and Node.js with TypeScript. Team Leader on three web products taken from requirements to production.",
   location: "Da Nang, Vietnam",
   email: "trantuanhiep28122003@gmail.com",
   linkedIn: "https://www.linkedin.com/in/hieptran-dev/",
   github: "https://github.com/mit-suu",
   portfolioDomain: "trantuanhiep.id.vn",
+  availability: "Available full-time · Da Nang or remote",
+  education: {
+    school: "FPT University",
+    degree: "Engineer's Degree in Software Engineering",
+    graduation: "Expected Dec 2026",
+    gpa: "7.9 / 10",
+  },
 };
-export const aboutParagraphs = [
-"I am a Full-Stack Developer focused on building scalable web applications and delivering seamless user experiences. My primary technology stack includes React, Next.js, Node.js, Express.js, and MongoDB.",
 
-"I enjoy designing RESTful APIs, developing modern user interfaces, and deploying applications on cloud platforms such as Azure. Through academic projects and industry experience, I have worked with GitHub-based development workflows, CI/CD practices, and software engineering best practices.",
+/** Scroll-scrubbed opening monologue. Words wrapped in *asterisks* are highlighted. */
+export const monologue =
+  "I build web products end to end — from the *first vague requirement* to *production on Azure*. React and Next.js on the front, Express and MongoDB behind it, *tests* holding it all together, and lately, *AI that proposes* while the system decides.";
 
-"Beyond web development, I am interested in developer tools and productivity solutions, including building VS Code extensions and creating tools that help developers improve software quality and development workflows.",
-
-"I am passionate about clean architecture, maintainable code, and transforming ideas into practical products that deliver real value to users while continuously growing as a Full-Stack Engineer.",
+export const characterNotes = [
+  { label: "Based in", value: "Da Nang, VN" },
+  { label: "Studying", value: "Software Eng. · FPT Univ." },
+  { label: "Graduating", value: "Dec 2026" },
+  { label: "Currently", value: "AI Engineer Intern @ Tekmium" },
 ];
-
