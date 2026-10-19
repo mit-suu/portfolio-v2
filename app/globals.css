@@ -467,6 +467,9 @@ html.has-cursor * {
 
 .hud__bar--bottom {
   bottom: 0;
+  /* Sit low in the thick opening letterbox; still centred once it slims to --bar-closed. */
+  align-items: end;
+  padding-bottom: calc((var(--bar-closed) - 22px) / 2);
 }
 
 .hud__dim {
